@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Topdata\TopdataFileAttachmentSW6\Storefront\Controller;
+namespace Topdata\TopdataFileAttachmentsSW6\Storefront\Controller;
 
 use Shopware\Core\Framework\Context;
-use Shopware\Core\Framework\DataAbstractionLayer\EntityRepositoryInterface;
+use Shopware\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Shopware\Core\Content\Media\MediaService;
 use Shopware\Storefront\Controller\StorefrontController;
@@ -16,15 +16,12 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class FileDownloadController extends StorefrontController
 {
-    private $productDocumentRepository;
-    private $mediaService;
 
     public function __construct(
-        EntityRepositoryInterface $productDocumentRepository,
-        MediaService $mediaService
-    ) {
-        $this->productDocumentRepository = $productDocumentRepository;
-        $this->mediaService = $mediaService;
+        private readonly EntityRepository $topdataFaProductDocumentRepository,
+        private readonly MediaService     $mediaService,
+    )
+    {
     }
 
     /**
@@ -35,7 +32,7 @@ class FileDownloadController extends StorefrontController
         $criteria = new Criteria([$documentId]);
         $criteria->addAssociation('media');
 
-        $document = $this->productDocumentRepository->search($criteria, $context)->first();
+        $document = $this->topdataFaProductDocumentRepository->search($criteria, $context)->first();
 
         if (!$document || !$document->getMedia()) {
             throw new \Exception('Document not found');

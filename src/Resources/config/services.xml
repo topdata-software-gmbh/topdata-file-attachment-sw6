@@ -4,12 +4,18 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="Topdata\TopdataFileAttachmentSW6\Storefront\Controller\FileDownloadController" public="true">
-            <argument type="service" id="product_document.repository"/>
-            <argument type="service" id="Shopware\Core\Content\Media\MediaService"/>
+
+        <!-- ENTITY DEFINITIONS -->
+        <service id="Topdata\TopdataFileAttachmentsSW6\Entity\TopdataFaProductDocumentDefinition">
+            <tag name="shopware.entity.definition" entity="topdata_fa_product_document" />
+        </service>
+
+        <!-- CONTROLLER -->
+        <service id="Topdata\TopdataFileAttachmentsSW6\Storefront\Controller\FileDownloadController" public="true" autowire="true">
             <call method="setContainer">
                 <argument type="service" id="service_container"/>
             </call>
         </service>
+
     </services>
 </container>

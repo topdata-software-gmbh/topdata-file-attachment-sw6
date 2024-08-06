@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Topdata\TopdataFileAttachmentSW6\Migration;
+namespace Topdata\TopdataFileAttachmentsSW6\Migration;
 
 use Doctrine\DBAL\Connection;
 use Shopware\Core\Framework\Migration\MigrationStep;
@@ -15,7 +15,7 @@ class Migration1628000000ProductDocument extends MigrationStep
     public function update(Connection $connection): void
     {
         $connection->executeStatement('
-            CREATE TABLE IF NOT EXISTS `tdfa_product_document` (
+            CREATE TABLE IF NOT EXISTS `topdata_fa_product_document` (
                 `id` BINARY(16) NOT NULL,
                 `product_id` BINARY(16) NOT NULL,
                 `media_id` BINARY(16) NOT NULL,

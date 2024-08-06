@@ -15,7 +15,7 @@
         "shopware/core": "6.4.* || 6.5.* || 6.6.*"
     },
     "extra": {
-        "shopware-plugin-class": "Topdata\\Topdata\TopdataFileAttachmentSW6\\TopdataFileAttachmentSW6",
+        "shopware-plugin-class": "Topdata\\TopdataFileAttachmentsSW6\\TopdataFileAttachmentsSW6",
         "plugin-icon": "src/Resources/config/plugin.png",
         "copyright": "(c) by TopData Software GmbH",
         "label": {
@@ -37,7 +37,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Topdata\\Topdata\TopdataFileAttachmentSW6\\": "src/"
+            "Topdata\\TopdataFileAttachmentsSW6\\": "src/"
         }
     }
 }

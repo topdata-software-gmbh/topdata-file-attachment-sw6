@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Topdata\TopdataFileAttachmentSW6\Core\Content\ProductDocument;
+namespace Topdata\TopdataFileAttachmentsSW6\Entity;
 
 use Shopware\Core\Content\Product\ProductDefinition;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityDefinition;
@@ -13,9 +13,9 @@ use Shopware\Core\Content\Media\MediaDefinition;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\StringField;
 use Shopware\Core\Framework\DataAbstractionLayer\FieldCollection;
 
-class ProductDocumentDefinition extends EntityDefinition
+class TopdataFaProductDocumentDefinition extends EntityDefinition
 {
-    public const ENTITY_NAME = 'tdfa_product_document';
+    public const ENTITY_NAME = 'topdata_fa_product_document';
 
     public function getEntityName(): string
     {
@@ -24,7 +24,7 @@ class ProductDocumentDefinition extends EntityDefinition
 
     public function getEntityClass(): string
     {
-        return ProductDocumentEntity::class;
+        return TopdataFaProductDocumentEntity::class;
     }
 
     protected function defineFields(): FieldCollection

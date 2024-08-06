@@ -1,13 +1,13 @@
 <?php declare(strict_types=1);
 
-namespace Topdata\TopdataFileAttachmentSW6\Core\Content\ProductDocument;
+namespace Topdata\TopdataFileAttachmentsSW6\Entity;
 
 use Shopware\Core\Content\Media\MediaEntity;
 use Shopware\Core\Content\Product\ProductEntity;
 use Shopware\Core\Framework\DataAbstractionLayer\Entity;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityIdTrait;
 
-class ProductDocumentEntity extends Entity
+class TopdataFaProductDocumentEntity extends Entity
 {
     use EntityIdTrait;
 
