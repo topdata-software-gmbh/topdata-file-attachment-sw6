@@ -26,6 +26,53 @@ After installation and activation:
 3. Upload and manage file attachments for the product
 4. The attachments will automatically appear on the storefront product detail page
 
+## Adding a PDF file to a product using the Admin API
+
+To add a PDF file to a product using the Shopware 6 Admin API, you can use the following curl commands:
+
+1. First, upload the PDF file:
+
+```bash
+curl -X POST \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  -H "Content-Type: application/octet-stream" \
+  -H "Content-Disposition: attachment; filename=example.pdf" \
+  --data-binary @/path/to/your/file.pdf \
+  https://your-shop-domain.com/api/_action/media/upload
+```
+
+2. Then, create a media entity for the uploaded file:
+
+```bash
+curl -X POST \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "mediaFolderId": "YOUR_MEDIA_FOLDER_ID",
+    "name": "Example PDF",
+    "fileName": "example.pdf",
+    "mimeType": "application/pdf",
+    "fileExtension": "pdf"
+  }' \
+  https://your-shop-domain.com/api/media
+```
+
+3. Finally, associate the media with the product:
+
+```bash
+curl -X POST \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "productId": "YOUR_PRODUCT_ID",
+    "mediaId": "MEDIA_ID_FROM_PREVIOUS_STEP",
+    "name": "Example PDF"
+  }' \
+  https://your-shop-domain.com/api/topdata-fa-product-document
+```
+
+Replace `YOUR_ACCESS_TOKEN`, `your-shop-domain.com`, `YOUR_MEDIA_FOLDER_ID`, `YOUR_PRODUCT_ID`, and `MEDIA_ID_FROM_PREVIOUS_STEP` with your actual values.
+
 ## Support
 
 For support, please contact:
