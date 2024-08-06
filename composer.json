@@ -1,0 +1,43 @@
+{
+    "name": "topdata/topdata-file-attachments-sw6",
+    "description": "A Shopware 6 plugin for attaching files to products.",
+    "version": "1.0.0",
+    "type": "shopware-platform-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "TopData Software GmbH",
+            "homepage": "https://www.topdata.de",
+            "role": "Manufacturer"
+        }
+    ],
+    "require": {
+        "shopware/core": "6.4.* || 6.5.* || 6.6.*"
+    },
+    "extra": {
+        "shopware-plugin-class": "Topdata\\Topdata\TopdataFileAttachmentSW6\\TopdataFileAttachmentSW6",
+        "plugin-icon": "src/Resources/config/plugin.png",
+        "copyright": "(c) by TopData Software GmbH",
+        "label": {
+            "de-DE": "Topdata Dateianhänge",
+            "en-GB": "Topdata File Attachments"
+        },
+        "description": {
+            "de-DE": "Ein Shopware 6 Plugin zum Anhängen von Dateien an Produkte.",
+            "en-GB": "A Shopware 6 plugin for attaching files to products."
+        },
+        "manufacturerLink": {
+            "de-DE": "https://www.topdata.de",
+            "en-GB": "https://www.topdata.de"
+        },
+        "supportLink": {
+            "de-DE": "https://www.topdata.de",
+            "en-GB": "https://www.topdata.de"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Topdata\\Topdata\TopdataFileAttachmentSW6\\": "src/"
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{% sw_extends '@Storefront/storefront/page/product-detail/index.html.twig' %}
+
+{% block page_product_detail_content %}
+    {{ parent() }}
+
+    {% if page.product.extensions.productDocuments %}
+        <div class="product-detail-documents">
+            <h2>{{ "topdata.fileattachment.documents"|trans }}</h2>
+            <ul>
+                {% for document in page.product.extensions.productDocuments %}
+                    <li>
+                        <a href="{{ path('frontend.topdata.file.download', { 'documentId': document.id }) }}" target="_blank">
+                            {{ document.name }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+{% endblock %}

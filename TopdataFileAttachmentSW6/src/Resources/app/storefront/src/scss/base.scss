@@ -1,0 +1,26 @@
+.product-detail-documents {
+    margin-top: 2rem;
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    li {
+        margin-bottom: 0.5rem;
+    }
+
+    a {
+        color: $sw-color-brand-primary;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

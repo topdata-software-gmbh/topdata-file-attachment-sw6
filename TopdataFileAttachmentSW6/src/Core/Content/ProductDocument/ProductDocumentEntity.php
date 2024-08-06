@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace TopdataFileAttachmentSW6\Core\Content\ProductDocument;
+namespace Topdata\TopdataFileAttachmentSW6\Core\Content\ProductDocument;
 
 use Shopware\Core\Content\Media\MediaEntity;
 use Shopware\Core\Content\Product\ProductEntity;
